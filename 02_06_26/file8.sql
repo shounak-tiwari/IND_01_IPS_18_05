@@ -33,3 +33,18 @@ savepoint sp1;
 select * from product;
 rollback to sp1;
 insert into product(proName,proPrice)  values('earphones',2090);
+
+
+
+select * from product;
+start transaction;
+savepoint sp1;
+insert into product(proName,proPrice) 
+values 
+('coffee',20);
+rollback to sp1;
+
+commit;
+
+rollback;
+
